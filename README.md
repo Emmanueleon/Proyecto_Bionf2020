@@ -25,19 +25,22 @@ Posterior, se realiza el *index* de las secuencias de Illumina para la secuencia
 ## Proyecto Bioinformática 
 Para poder realizar el proyecto final de la clase de bioinformática se han utilizado un set de datos y metadatos obtenidos hasta el momento, la organización de las carpetas que se encuentran en este repo se detallan a continuación: 
 
-### * `/data/`
-Este directorio contiene las carpetas "PoolA" y "PoolB" cada una contiene los datos de secuenciación, tanto para las lecturas *Forward* (R1) como para las lecturas *Reverse* (R2). Cada Pool contiene las 
+### `/bin/`
+Este directorio contiene los scripts necesarios para:
+
+### `/data/`
+Este directorio contiene el sub directorio `raw` que contiene  2 carpetas que a su vez contienen parte de los resultados obtenidos por secuenciación (Pool A y Pool B). En cada carpeta se encuentran los archivos crudos tal como se bajan de *BaseSpace* PONER LINK. Cada carpeta contiene 2 archivos, los datos de secuenciación tanto para las lecturas *Forward* (`*_R1_*.fastaq.gz`) como para las lecturas *Reverse* (`*_R2_.fasta.gz`). 
 
 ### `/meta/`
 Este directorio contiene el archivo `sample-metadata`que es un archivo de texto en donde se especifíca el ID de la muestra, cada una de las secuencias del cebador *Reverse* utilizado, la secuencia del cebador *Forward*, el pool y la posición en el posillo de cada muestra, además del tipo de muestra que es. 
 
 Además contiene el archivo `Antropometria_madre.tsv` en donde se especifícan parámetros demográficos de las madres participantes como: edad, peso, estatura, semanas de gestación (SDG). Como parte del estudio se realiza una visita domiciliaria 1 mes después del nacimiento del recién nacido, se realizan mediciones antopométricas tanto de la madre como del recién nacido, en el mismo documento se muestran los datos obtenidos de la madre, además de algunos otros datos como tipo de parto, clínica del IMSS a la cual son derechoabientes, entre otros. 
-
-
-### `/bin/`
-Este directorio contiene los scripts necesarios para: 
-
+ 
 ### `/output/`
+Este directorio contiene diferentes subdirectorios:
+ *`ampkt_results`: se guardan las salidas de los datos generados por el script "NOMBRE DEL SCRIPT". 
+ *`R`
+ * 
 
 
 
