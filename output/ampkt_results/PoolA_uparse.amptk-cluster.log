@@ -1,0 +1,36 @@
+[05/27/20 00:47:44]: /Users/psychodelic4901/miniconda3/envs/amptk/bin/amptk cluster -i ../output/ampkt_results/PoolA_preprocess.demux.fq.gz -o PoolA_uparse
+
+[05/27/20 00:47:44]: OS: MacOSX 10.14.6, 4 cores, ~ 8 GB RAM. Python: 3.7.6
+[05/27/20 00:47:44]: Python Modules: numpy v1.18.4, pandas v1.0.3, matplotlib v3.2.1, psutil v5.7.0, natsort v7.0.1, biopython v1.76, edlib v1.3.8.post1, biom-format v2.1.8
+[05/27/20 00:47:44]: AMPtk v1.4.2, USEARCH v9.2.64, VSEARCH v2.14.2
+[05/27/20 00:47:44]: Loading FASTQ Records
+[05/27/20 00:47:44]: vsearch --fastq_filter ../output/ampkt_results/PoolA_preprocess.demux.fq.gz --fastaout PoolA_uparse_tmp/PoolA_uparse.orig.fa --fastq_qmax 55 --threads 4
+[05/27/20 00:47:45]: b'WARNING: The fastq_filter command does not support multithreading.\nOnly 1 thread used.\nvsearch v2.14.2_macos_x86_64, 8.0GB RAM, 4 cores\nhttps://github.com/torognes/vsearch\n\nReading input file 100%\n173325 sequences kept (of which 0 truncated), 0 sequences discarded.\n'
+[05/27/20 00:47:46]: 173,325 reads (10.4 MB)
+[05/27/20 00:47:46]: Quality Filtering, expected errors < 1.0
+[05/27/20 00:47:46]: vsearch --fastq_filter ../output/ampkt_results/PoolA_preprocess.demux.fq.gz --fastq_maxee 1.0 --fastqout PoolA_uparse_tmp/PoolA_uparse.EE1.0.filter.fq --fastaout PoolA_uparse_tmp/PoolA_uparse.EE1.0.filter.fa --fastq_qmax 55 --threads 4
+[05/27/20 00:47:47]: b'WARNING: The fastq_filter command does not support multithreading.\nOnly 1 thread used.\nvsearch v2.14.2_macos_x86_64, 8.0GB RAM, 4 cores\nhttps://github.com/torognes/vsearch\n\nReading input file 100%\n163218 sequences kept (of which 0 truncated), 10107 sequences discarded.\n'
+[05/27/20 00:47:47]: 163,218 reads passed
+[05/27/20 00:47:47]: De-replication (remove duplicate reads)
+[05/27/20 00:47:47]: vsearch --derep_fulllength PoolA_uparse_tmp/PoolA_uparse.EE1.0.filter.fa --sizeout --output PoolA_uparse_tmp/PoolA_uparse.EE1.0.derep.fa --threads 4
+[05/27/20 00:47:48]: b'WARNING: The derep_fulllength command does not support multithreading.\nOnly 1 thread used.\nvsearch v2.14.2_macos_x86_64, 8.0GB RAM, 4 cores\nhttps://github.com/torognes/vsearch\n\nDereplicating file PoolA_uparse_tmp/PoolA_uparse.EE1.0.filter.fa 100%\n24762755 nt in 163218 seqs, min 100, max 222, avg 152\nSorting 100%\n15712 unique sequences, avg cluster 10.4, median 1, max 29941\nWriting output file 100%\n'
+[05/27/20 00:47:48]: 15,712 reads passed
+[05/27/20 00:47:48]: vsearch --sortbysize PoolA_uparse_tmp/PoolA_uparse.EE1.0.derep.fa --minsize 2 --output PoolA_uparse_tmp/PoolA_uparse.EE1.0.sort.fa --threads 4
+[05/27/20 00:47:48]: b'WARNING: The sortbysize command does not support multithreading.\nOnly 1 thread used.\nvsearch v2.14.2_macos_x86_64, 8.0GB RAM, 4 cores\nhttps://github.com/torognes/vsearch\n\nReading file PoolA_uparse_tmp/PoolA_uparse.EE1.0.derep.fa 100%\n2402708 nt in 15712 seqs, min 100, max 222, avg 153\nGetting sizes 100%\nSorting 100%\nMedian abundance: 3\nWriting output 100%\n'
+[05/27/20 00:47:48]: Clustering OTUs (UPARSE)
+[05/27/20 00:47:48]: usearch9 -cluster_otus PoolA_uparse_tmp/PoolA_uparse.EE1.0.sort.fa -relabel OTU -otu_radius_pct 3 -otus PoolA_uparse_tmp/PoolA_uparse.EE1.0.otus.fa -threads 4
+[05/27/20 00:47:48]: b'usearch v9.2.64_i86osx32, 4.0Gb RAM (8.6Gb total), 4 cores\n(C) Copyright 2013-16 Robert C. Edgar, all rights reserved.\nhttp://drive5.com/usearch\n\nLicense: personal use, non-transferrable\n\n'
+[05/27/20 00:47:48]: b'00:00 2.6Mb     0.1% 0 OTUs, 0 chimeras\r00:00 5.3Mb   100.0% 124 OTUs, 50 chimeras\r\n\nWARNING: Option -threads not used\n\n'
+[05/27/20 00:47:48]: 124 OTUs
+[05/27/20 00:47:48]: Cleaning up padding from OTUs
+[05/27/20 00:47:48]: Validating OTU orientation
+[05/27/20 00:47:48]: vsearch --usearch_global PoolA_uparse_tmp/PoolA_uparse.EE1.0.sort.fa --db PoolA_uparse_tmp/PoolA_uparse.EE1.0.clean.otus.fa --sizein --id 0.97 --strand plus --uc PoolA_uparse_tmp/orient.uc
+[05/27/20 00:47:49]: b'vsearch v2.14.2_macos_x86_64, 8.0GB RAM, 4 cores\nhttps://github.com/torognes/vsearch\n\nReading file PoolA_uparse_tmp/PoolA_uparse.EE1.0.clean.otus.fa 100%\n18555 nt in 124 seqs, min 106, max 161, avg 150\nMasking 100%\nCounting k-mers 100%\nCreating k-mer index 100%\nSearching 100%\nMatching unique query sequences: 3633 of 3851 (94.34%)\nMatching total query sequences: 148914 of 151357 (98.39%)\n'
+[05/27/20 00:47:49]: vsearch --usearch_global PoolA_uparse_tmp/PoolA_uparse.EE1.0.clean.otus.fa --db PoolA_uparse_tmp/PoolA_uparse.EE1.0.clean.otus.fa --self --id 0.95 --strand both --userout PoolA_uparse_tmp/orient-map.txt --userfields query+target+qstrand+id
+[05/27/20 00:47:49]: b'vsearch v2.14.2_macos_x86_64, 8.0GB RAM, 4 cores\nhttps://github.com/torognes/vsearch\n\nReading file PoolA_uparse_tmp/PoolA_uparse.EE1.0.clean.otus.fa 100%\n18555 nt in 124 seqs, min 106, max 161, avg 150\nMasking 100%\nCounting k-mers 100%\nCreating k-mer index 100%\nSearching 100%\nMatching unique query sequences: 50 of 124 (40.32%)\n'
+[05/27/20 00:47:49]: Dropping 0 OTUs: 
+[05/27/20 00:47:49]: 124 OTUs validated (0 dropped)
+[05/27/20 00:47:49]: Mapping Reads to OTUs and Building OTU table
+[05/27/20 00:47:49]: vsearch --usearch_global PoolA_uparse_tmp/PoolA_uparse.orig.fa --strand plus --id 0.97 --db PoolA_uparse_tmp/PoolA_uparse.passed.otus.fa --uc PoolA_uparse_tmp/PoolA_uparse.EE1.0.mapping.uc --otutabout PoolA_uparse_tmp/PoolA_uparse.EE1.0.otu_table.txt --threads 4
+[05/27/20 00:48:07]: b'vsearch v2.14.2_macos_x86_64, 8.0GB RAM, 4 cores\nhttps://github.com/torognes/vsearch\n\nReading file PoolA_uparse_tmp/PoolA_uparse.passed.otus.fa 100%\n18555 nt in 124 seqs, min 106, max 161, avg 150\nMasking 100%\nCounting k-mers 100%\nCreating k-mer index 100%\nSearching 100%\nMatching unique query sequences: 162048 of 173325 (93.49%)\nWriting OTU table (classic) 100%\n'
+[05/27/20 00:48:07]: 162,048 reads mapped to OTUs (93%)

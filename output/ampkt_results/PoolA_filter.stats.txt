@@ -1,0 +1,2 @@
+	reads per sample	original OTUs	final OTUs
+A-13MAR20	162048	124	124

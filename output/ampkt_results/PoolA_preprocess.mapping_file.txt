@@ -1,0 +1,2 @@
+#SampleID	BarcodeSequence	LinkerPrimerSequence	RevBarcodeSequence	ReversePrimer	phinchID	DemuxReads	Treatment
+A-13MAR20	S1	TGTGCC	no_data	CGTGAT	A-13MAR20	173325	no_data

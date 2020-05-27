@@ -1,0 +1,12 @@
+[05/27/20 01:14:47]: /Users/psychodelic4901/miniconda3/envs/amptk/bin/amptk filter -i ../output/ampkt_results/PoolA_uparse.otu_table.txt -f ../output/ampkt_results/PoolA_uparse.cluster.otus.fa -o PoolA_filter -p 0.005 --min_reads_otu 2
+
+[05/27/20 01:14:47]: OS: MacOSX 10.14.6, 4 cores, ~ 8 GB RAM. Python: 3.7.6
+[05/27/20 01:14:47]: Python Modules: numpy v1.18.4, pandas v1.0.3, matplotlib v3.2.1, psutil v5.7.0, natsort v7.0.1, biopython v1.76, edlib v1.3.8.post1, biom-format v2.1.8
+[05/27/20 01:14:47]: AMPtk v1.4.2, USEARCH v9.2.64, VSEARCH v2.14.2
+[05/27/20 01:14:47]: Loading OTU table: ../output/ampkt_results/PoolA_uparse.otu_table.txt
+[05/27/20 01:14:47]: OTU table contains 1 samples, 124 OTUs, and 162,048 reads counts
+[05/27/20 01:14:47]: Sorting OTU table naturally
+[05/27/20 01:14:47]: Normalizing OTU table to number of reads per sample
+[05/27/20 01:14:47]: Overwriting auto detect index-bleed, setting to 0.500000%
+[05/27/20 01:14:47]: Filtered OTU table contains 1 samples, 124 OTUs, and 162,048 read counts
+[05/27/20 01:14:47]: Finding valid OTUs

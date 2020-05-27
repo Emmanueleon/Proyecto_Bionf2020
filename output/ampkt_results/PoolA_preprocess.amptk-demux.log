@@ -1,0 +1,37 @@
+[05/27/20 00:22:22]: /Users/psychodelic4901/miniconda3/envs/amptk/bin/amptk illumina -i ../data/raw/PoolA/ -o PoolA_preprocess -f TGTGCC -r CGTGAT -l 250 --full_length --cleanup
+
+[05/27/20 00:22:22]: OS: MacOSX 10.14.6, 4 cores, ~ 8 GB RAM. Python: 3.7.6
+[05/27/20 00:22:22]: Python Modules: numpy v1.18.4, pandas v1.0.3, matplotlib v3.2.1, psutil v5.7.0, natsort v7.0.1, biopython v1.76, edlib v1.3.8.post1, biom-format v2.1.8
+[05/27/20 00:22:22]: AMPtk v1.4.2, USEARCH v9.2.64, VSEARCH v2.14.2
+[05/27/20 00:22:22]: Gzipped files detected, uncompressing
+[05/27/20 00:22:22]: Uncompressing A-13MAR20_S1_L001_R1_001.fastq.gz
+[05/27/20 00:22:22]: pigz --decompress -c -p 4 ../data/raw/PoolA/A-13MAR20_S1_L001_R1_001.fastq.gz
+[05/27/20 00:22:39]: Uncompressing A-13MAR20_S1_L001_R2_001.fastq.gz
+[05/27/20 00:22:40]: pigz --decompress -c -p 4 ../data/raw/PoolA/A-13MAR20_S1_L001_R2_001.fastq.gz
+[05/27/20 00:22:57]: TGTGCC fwd primer not found in AMPtk primer db, assuming it is actual primer sequence.
+[05/27/20 00:22:57]: CGTGAT rev primer not found in AMPtk primer db, assuming it is actual primer sequence.
+[05/27/20 00:22:57]: Demuxing data using 4 cpus
+[05/27/20 00:22:57]: Dropping reads less than 100 bp and setting lossless trimming to 250 bp.
+[05/27/20 00:22:57]: Strip Primers and Merge PE reads. FwdPrimer: TGTGCC RevPrimer: CGTGAT
+[05/27/20 00:22:57]: A-13MAR20: ../data/raw/PoolA/A-13MAR20_S1_L001_R1_001.fastq ../data/raw/PoolA/A-13MAR20_S1_L001_R2_001.fastq
+[05/27/20 00:26:16]: Now merging PE reads
+[05/27/20 00:26:16]: usearch9 -fastq_mergepairs PoolA_preprocess/A-13MAR20_R1.fq -reverse PoolA_preprocess/A-13MAR20_R2.fq -fastqout PoolA_preprocess/A-13MAR20.merged.fq.merged.fq -fastq_trunctail 5 -fastqout_notmerged_fwd PoolA_preprocess/A-13MAR20.merged.fq.notmerged.R1.fq -minhsp 12 -fastq_maxdiffs 8 -report PoolA_preprocess/A-13MAR20.merged.fq.merge_report.txt -fastq_minmergelen 100 -threads 1
+[05/27/20 00:26:24]: b'usearch v9.2.64_i86osx32, 4.0Gb RAM (8.6Gb total), 4 cores\n(C) Copyright 2013-16 Robert C. Edgar, all rights reserved.\nhttp://drive5.com/usearch\n\nLicense: personal use, non-transferrable\n\n'
+[05/27/20 00:26:24]: b'\nMerging\n  Fwd PoolA_preprocess/A-13MAR20_R1.fq\n  Rev PoolA_preprocess/A-13MAR20_R2.fq\n  Keep read labels\n\n00:00 2.1Mb     0.1% 0% merged\r00:01 70Mb      4.9% 24.1% merged\r00:02 70Mb     18.9% 23.7% merged\r00:03 69Mb     34.4% 25.6% merged\r00:04 69Mb     48.9% 27.5% merged\r00:05 69Mb     52.4% 27.0% merged\r00:06 69Mb     61.9% 25.8% merged\r00:07 69Mb     77.5% 25.1% merged\r00:08 69Mb     93.0% 25.3% merged\r00:08 69Mb    100.0% 25.5% merged\r\n\nMerged length distribution:\n       101  Min\n       186  Low quartile\n       186  Median\n       186  High quartile\n       407  Max\n\nTotals:\n    490635  Pairs (490.6k)\n    124964  Merged (125.0k, 25.47%)\n     13993  Alignments with zero diffs (2.85%)\n    273382  Too many diffs (> 8) (55.72%)\n      5299  Fwd too short (< 64) after tail trimming (1.08%)\n     70678  Rev too short (< 64) after tail trimming (14.41%)\n     15205  No alignment found (3.10%)\n         4  Alignment too short (< 16) (0.00%)\n      1103  Merged too short (< 100)\n      4447  Staggered pairs (0.91%) merged & trimmed\n    146.68  Mean alignment length\n    191.80  Mean merged length\n      0.12  Mean fwd expected errors\n      1.96  Mean rev expected errors\n      0.09  Mean merged expected errors\n'
+[05/27/20 00:26:25]: Removing phix from A-13MAR20.merged.fq
+[05/27/20 00:26:26]: File Size: 242185944 bytes
+[05/27/20 00:26:26]: usearch9 -filter_phix PoolA_preprocess/A-13MAR20.merged.fq.tmp -output PoolA_preprocess/A-13MAR20.merged.fq -threads 1
+[05/27/20 00:26:36]: b'usearch v9.2.64_i86osx32, 4.0Gb RAM (8.6Gb total), 4 cores\n(C) Copyright 2013-16 Robert C. Edgar, all rights reserved.\nhttp://drive5.com/usearch\n\nLicense: personal use, non-transferrable\n\n'
+[05/27/20 00:26:36]: b'00:00 203Mb     0.1% Word stats\r00:00 203Mb   100.0% Word stats\r\n00:00 203Mb   100.0% Alloc rows\r\n00:00 203Mb     0.1% Build index\r00:00 203Mb   100.0% Build index\r\n00:01 171Mb     5.7% Filtering for phix, 290 hits (0.9%)\r00:02 172Mb    17.9% Filtering for phix, 864 hits (0.8%)\r00:03 172Mb    29.1% Filtering for phix, 1248 hits (0.8%)\r00:04 172Mb    41.2% Filtering for phix, 1622 hits (0.8%)\r00:05 172Mb    52.0% Filtering for phix, 1951 hits (0.7%)\r00:06 172Mb    62.5% Filtering for phix, 2290 hits (0.7%)\r00:07 172Mb    66.3% Filtering for phix, 2401 hits (0.7%)\r00:08 172Mb    74.3% Filtering for phix, 2612 hits (0.7%)\r00:09 172Mb    85.7% Filtering for phix, 2931 hits (0.7%)\r00:10 172Mb    97.8% Filtering for phix, 3292 hits (0.7%)\r00:10 172Mb   100.0% Filtering for phix, 3351 hits (0.7%)\r\n'
+[05/27/20 00:27:15]: Concatenating Demuxed Files
+[05/27/20 00:27:15]: 2,678,473 total reads
+[05/27/20 00:27:15]: 1,165,319 Fwd Primer found, 1,165,302 Rev Primer found
+[05/27/20 00:27:15]: 2,187,349 discarded Primer incompatibility
+[05/27/20 00:27:15]: 313,824 discarded too short (< 100 bp)
+[05/27/20 00:27:15]: 173,325 valid output reads
+[05/27/20 00:27:15]: Found 1 barcoded samples
+                        Sample:  Count
+                     A-13MAR20:  173325
+[05/27/20 00:27:15]: pigz -c -p 4 PoolA_preprocess.demux.fq
+[05/27/20 00:27:17]: Output file:  PoolA_preprocess.demux.fq.gz (10.4 MB)
+[05/27/20 00:27:17]: Mapping file: PoolA_preprocess.mapping_file.txt

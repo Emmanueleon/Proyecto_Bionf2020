@@ -1,0 +1,34 @@
+[05/27/20 02:06:18]: /Users/psychodelic4901/miniconda3/envs/amptk/bin/amptk taxonomy -i ../output/ampkt_results/PoolA_filter.final.txt -f ../output/ampkt_results/PoolA_filter.filtered.otus.fa -o PoolA_taxonomy -m ../meta/sample-metadata.txt -d 16S
+
+[05/27/20 02:06:18]: OS: MacOSX 10.14.6, 4 cores, ~ 8 GB RAM. Python: 3.7.6
+[05/27/20 02:06:18]: Python Modules: numpy v1.18.4, pandas v1.0.3, matplotlib v3.2.1, psutil v5.7.0, natsort v7.0.1, biopython v1.76, edlib v1.3.8.post1, biom-format v2.1.8
+[05/27/20 02:06:18]: AMPtk v1.4.2, USEARCH v9.2.64, VSEARCH v2.14.2
+[05/27/20 02:06:18]: Loading FASTA Records
+[05/27/20 02:06:18]: 124 OTUs
+[05/27/20 02:06:18]: Global alignment OTUs with usearch_global (VSEARCH) against 16S.udb
+[05/27/20 02:06:18]: vsearch --usearch_global ../output/ampkt_results/PoolA_filter.filtered.otus.fa --db /Users/psychodelic4901/miniconda3/envs/amptk/lib/python3.7/site-packages/amptk/DB/16S.udb --userout PoolA_taxonomy.usearch.txt --id 0.7 --strand both --output_no_hits --maxaccepts 0 --top_hits_only --userfields query+target+id --notrunclabels --threads 4
+[05/27/20 02:06:34]: b'vsearch v2.14.2_macos_x86_64, 8.0GB RAM, 4 cores\nhttps://github.com/torognes/vsearch\n\nReading UDB file /Users/psychodelic4901/miniconda3/envs/amptk/lib/python3.7/site-packages/amptk/DB/16S.udb 100%\nReorganizing data in memory 100%\nCreating bitmaps 100%\nParsing abundances 100%\n18961589 nt in 13118 seqs, min 320, max 2205, avg 1445\nSearching 100%\nMatching unique query sequences: 124 of 124 (100.00%)\n'
+[05/27/20 02:06:34]: Classifying OTUs with UTAX (USEARCH)
+[05/27/20 02:06:34]: usearch9 -utax ../output/ampkt_results/PoolA_filter.filtered.otus.fa -db /Users/psychodelic4901/miniconda3/envs/amptk/lib/python3.7/site-packages/amptk/DB/16S.udb -utaxout PoolA_taxonomy.utax.txt -utax_cutoff 0.8 -strand plus -notrunclabels -threads 4
+[05/27/20 02:06:34]: b'usearch v9.2.64_i86osx32, 4.0Gb RAM (8.6Gb total), 4 cores\n(C) Copyright 2013-16 Robert C. Edgar, all rights reserved.\nhttp://drive5.com/usearch\n\nLicense: personal use, non-transferrable\n\n'
+[05/27/20 02:06:34]: b'00:00 1.8Mb     0.0% Rows\r00:00 83Mb    100.0% Rows\r\n00:00 83Mb   Reading pointers...done.\n00:00 84Mb   Reading db seqs...done.\n00:00 103Mb     0.1% 0 seqs, 0.0% at phylum, 0.0% genus (P > 0.00)\r\n\nusearch9 -utax ../output/ampkt_results/PoolA_filter.filtered.otus.fa -db /Users/psychodelic4901/miniconda3/envs/amptk/lib/python3.7/site-packages/amptk/DB/16S.udb -utaxout PoolA_taxonomy.utax.txt -utax_cutoff 0.8 -strand plus -notrunclabels -threads 4\n\n---Fatal error---\n../makesearcher.cpp(354) assert failed: udb->m_UTaxData != 0\n'
+[05/27/20 02:06:34]: Classifying OTUs with SINTAX (USEARCH)
+[05/27/20 02:06:34]: usearch9 -sintax ../output/ampkt_results/PoolA_filter.filtered.otus.fa -db /Users/psychodelic4901/miniconda3/envs/amptk/lib/python3.7/site-packages/amptk/DB/16S_SINTAX.udb -tabbedout PoolA_taxonomy.sintax.txt -sintax_cutoff 0.8 -strand both -threads 4
+[05/27/20 02:06:34]: b'usearch v9.2.64_i86osx32, 4.0Gb RAM (8.6Gb total), 4 cores\n(C) Copyright 2013-16 Robert C. Edgar, all rights reserved.\nhttp://drive5.com/usearch\n\nLicense: personal use, non-transferrable\n\n'
+[05/27/20 02:06:34]: b'00:00 1.7Mb     0.0% Rows\r00:00 13Mb    100.0% Rows\r\n00:00 13Mb   Read taxonomy info...done.\n00:00 13Mb   Reading pointers...done.\n00:00 15Mb   Reading db seqs...done.\n00:00 17Mb      0.1% Processing\r00:00 18Mb    100.0% Processing\r\n'
+[05/27/20 02:06:34]: UTAX results empty
+[05/27/20 02:06:34]: SINTAX results parsed, resulting in 124 taxonomy predictions
+[05/27/20 02:06:35]: Global alignment results parsed, resulting in 124 taxonomy predictions
+[05/27/20 02:06:35]: Combined OTU taxonomy dictionary contains 124 taxonomy predictions
+[05/27/20 02:06:35]: Appending taxonomy to OTU table and OTUs
+[05/27/20 02:06:35]: Generating phylogenetic tree
+[05/27/20 02:06:35]: usearch9 -cluster_agg ../output/ampkt_results/PoolA_filter.filtered.otus.fa -treeout PoolA_taxonomy.tree.phy
+[05/27/20 02:06:35]: b'usearch v9.2.64_i86osx32, 4.0Gb RAM (8.6Gb total), 4 cores\n(C) Copyright 2013-16 Robert C. Edgar, all rights reserved.\nhttp://drive5.com/usearch\n\nLicense: personal use, non-transferrable\n\n'
+[05/27/20 02:06:35]: b'00:00 1.5Mb     0.1% Reading ../output/ampkt_results/PoolA_filter.filtered.otus.fa\r00:00 1.5Mb   100.0% Reading ../output/ampkt_results/PoolA_filter.filtered.otus.fa\r\n00:00 2.4Mb     0.1% Word stats                                                   \r00:00 2.5Mb   100.0% Word stats\r\n00:00 2.5Mb   100.0% Alloc rows\r\n00:00 2.5Mb     0.1% Build index\r00:00 2.6Mb   100.0% Build index\r\n00:00 3.0Mb     0.8% Distance matrix/usort\r00:00 3.9Mb   100.0% Distance matrix/usort\r\n00:00 4.0Mb     0.8% Building tree        \r00:00 4.0Mb   100.0% Building tree\r\n'
+[05/27/20 02:06:35]: Taxonomy finished: PoolA_taxonomy.taxonomy.txt
+[05/27/20 02:06:35]: Classic OTU table with taxonomy: PoolA_taxonomy.otu_table.taxonomy.txt
+[05/27/20 02:06:37]: biom convert -i ../output/ampkt_results/PoolA_filter.final.txt -o PoolA_taxonomy.biom.tmp --table-type OTU table --to-json
+[05/27/20 02:06:38]: A-13MAR20 are missing from mapping file (metadata), skipping biom file creation
+[05/27/20 02:06:38]: BIOM OTU table created: PoolA_taxonomy.biom
+[05/27/20 02:06:38]: OTUs with taxonomy: PoolA_taxonomy.otus.taxonomy.fa
+[05/27/20 02:06:38]: OTU phylogeny: PoolA_taxonomy.tree.phy
