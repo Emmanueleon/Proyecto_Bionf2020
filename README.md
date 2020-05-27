@@ -16,7 +16,7 @@ Se realizó una secuenciación por síntesis utilizando la plataforma Illumina M
 
 Primero se realiza una primera PCR donde se realiza el *multiplex*. Para esta PCR se utiliza un cebador *Forward* (TGTGCC) y 24 cebadores *Reverse* diferentes, siendo estos últimos los barcodes de las muestras. Debido a que se utilizan 24 reverse diferentes, las 96 muestras se agrupan en 4 *pools*, llamados Pool A, B, C y D. En la siguiente figura se ejemplifica. 
 
-
+![Figura 1](Librerias.png)
 
 Posterior, se realiza el *index* de las secuencias de Illumina para la secuenciación, el cebador *Forward* es similar entre los 4 pools, pero diferente al de la primera PCR, y cada pool tiene un cebador *Reverse* diferente. Finalmente todos los pools son mezclados en uno solo y el pool final "Master pool" se secuencía.Como resultados el Centro de secuenciación sube a *BaseSpace* de Illumina 8 archivos ( 2 archivos: 1 archivo Pool#_ R1.fastq.gz y un archivo Pool#_R2.fastq.gz, para cada uno de los 4 pools).
 
