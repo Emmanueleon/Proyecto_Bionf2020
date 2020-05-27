@@ -39,10 +39,14 @@ Además contiene el archivo `Antropometria_madre.tsv` en donde se especifícan p
 ### `/output/`
 Este directorio contiene diferentes subdirectorios: 
 
- *`ampkt_results`: se guardan las salidas de los datos generados por el script "NOMBRE DEL SCRIPT". 
- *`R`
+ * `ampkt_results`: se guardan las salidas de los datos generados por el script "NOMBRE DEL SCRIPT". 
+ * `R`
  * 
 
+### `/reports/`
+Este directorio contiene dos diferentes subdirectorios:
+ * `ìmages`: En este subdirectorio se almacenan las imagenes que se utilizan para los reportes o el README y que no son generadas por ningún script. 
+ * `reports`: En este subdirectorio se guardan los reportes generados a partir de los resultados obtenidos. 
 
 
 
