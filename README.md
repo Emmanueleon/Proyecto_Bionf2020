@@ -37,20 +37,22 @@ Contains the necessary scripts to:
  * Run the next step 
 
 ### `/data/`
-Contains two sub directories:   
- * `raw` which contains two folders with the results downloaded from BaseSpace for the PoolA and Pool B. Each folder contains 2 files, one generated for the Forward reads (`*_R1_*.fastaq.gz`) and other for the Reverse reads (`*_R2_.fasta.gz`). 
-
+Contains two files:   
+ * `raw` which contains two folders with the results downloaded from BaseSpace for the PoolA and Pool B. Each folder contains 2 files, one generated for the Forward reads (`*_R1_*.fastaq.gz`) and other for the Reverse reads (`*_R2_.fasta.gz`). Due to the file size, OSF's links were pasted in this folder.
+ 
+ * `sample-metadata` a mapping file that contains: 
+   * `sample ID`: Name of the sample. 
+   * `barcode_sequence_forward`: The sequence that was used as forward primer for first PCR. It's just one for the 96 samples. 
+   * `barcode_sequence_forward`: The sequences that were used as reverse primers for first PCR. They are 24 differents sequences. 
+   * `linkerPrimerSequence`: The sequence between barcodes and index adapters of Illumina. 
+   * `ReversPrimerSequence`: The sequences that was used as reverse primer for the second PCR. 
+   * `Bloque`: The group to which the sample belongs.
+   * `Description`: The position that the sample had in the 96 well plate.
+   * `Tipo_muestra`: where the sample comes from, faeces from the mother, of the newborn or mother's milk.
+   
 ### `/meta/`
-Contains the file `sample-metadata`, a text file that specify: 
- * Sample ID:
 
-
-el ID de la muestra, cada una de las secuencias del cebador *Reverse* utilizado, la secuencia del cebador *Forward*, el pool y la posición en el posillo de cada muestra, además del tipo de muestra que es. 
-
-Moreover, contains the file `Antropometria_madre.tsv` in which antrophometric data from participant mother's where collected. As part of the project,after 1 month of childbirth the participants were visited, antrophometric meditions from the mother and the newborn were obtained. Some other information like type of delivery, clinic where they belong, and some other information are collected.
- * Age
-
- edad, peso, estatura, semanas de gestación (SDG).  
+Contains the file `Antropometria_madre.tsv` in which antrophometric data from participant mother's where collected, like age, height weight, gestation weeks,etc. As part of the project,after 1 month of childbirth the participants were visited, antrophometric meditions from the mother and the newborn were obtained. Some other information like type of delivery, clinic where they belong, and some other information are collected. 
  
 ### `/output/`
 Contain different subdirectories:  
@@ -63,7 +65,10 @@ Contain different subdirectories:
 Contains two subdirectories: 
  * `images`: In this subdirectory images that were used for the reports or README, for example, are stored. These images are not related  nor product of the scripts. 
   
- * `reports`: In this subdirectory reports generated from the results obtained are saved, they are RMarkdown type.An example [Reporte microbiota de la leche](reports/reports/Composición de la microbiota de la leche materna.html).
+ * `reports`: In this subdirectory reports generated from the results obtained are saved, they are RMarkdown type.An example 
+ 
+ [Reporte](reports/reports/Composición de la microbiota de la leche materna.html)
+ [Reporte microbiota de la leche](reports/reports/Composición de la microbiota de la leche materna.html).
  
 
 
