@@ -63,7 +63,7 @@ Contain different subdirectories:
 Contains two subdirectories: 
  * `images`: In this subdirectory images that were used for the reports or README, for example, are stored. These images are not related  nor product of the scripts. 
   
- * `reports`: In this subdirectory reports generated from the results obtained are saved, they are RMarkdown type.An example [Reporte microbiota de la leche](ProyectoBioinf2020/reports/reports/Composición de la microbiota de la leche materna.html).
+ * `reports`: In this subdirectory reports generated from the results obtained are saved, they are RMarkdown type.An example [Reporte microbiota de la leche](reports/reports/Composición de la microbiota de la leche materna.html).
  
 
 
