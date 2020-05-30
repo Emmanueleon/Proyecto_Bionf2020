@@ -61,9 +61,9 @@ Contain different subdirectories:
 
 ### `/reports/`
 Contains two subdirectories: 
- * `ìmages`: In this subdirectory images that were used for the reports or README, for example, are stored. These images are not related  nor product of the scripts. 
+ * `images`: In this subdirectory images that were used for the reports or README, for example, are stored. These images are not related  nor product of the scripts. 
   
- * `reports`: In this subdirectory reports generated from the results obtained are saved, they are RMarkdown type. 
+ * `reports`: In this subdirectory reports generated from the results obtained are saved, they are RMarkdown type.An example [](
  
 
 
